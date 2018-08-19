@@ -1,6 +1,6 @@
 {
   "name": "huijiewei/yii2-phonenumber",
-  "description": "Slim progress bars for Ajax'y applications. Inspired by Google, YouTube, and Medium.",
+  "description": "A PHP library for parsing, formatting, storing and validating international phone numbers. This library is based on Google's libphonenumber.",
   "minimum-stability": "stable",
   "license": "MIT",
   "type": "yii2-extension",
