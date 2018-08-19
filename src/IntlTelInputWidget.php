@@ -32,11 +32,11 @@ class IntlTelInputWidget extends InputWidget
         ], $this->options);
 
         $this->clientOptions = ArrayHelper::merge([
-            'defaultCountry'     => 'cn',
-            'numberType'         => 'MOBILE',
+            'initialCountry' => 'cn',
+            'placeholderNumberType' => 'MOBILE',
             'preferredCountries' => ['us', 'gb', 'cn'],
             'responsiveDropdown' => true,
-            'nationalMode'       => false,
+            'nationalMode' => false,
         ], $this->clientOptions);
 
         $this->registerAssetBundle();
@@ -44,13 +44,9 @@ class IntlTelInputWidget extends InputWidget
         $this->registerScript();
     }
 
-    public function run()
+    public function registerAssetBundle()
     {
-        if ($this->hasModel()) {
-            return Html::activeTextInput($this->model, $this->attribute, $this->options);
-        } else {
-            return Html::textInput($this->name, $this->value, $this->options);
-        }
+        $this->_assetBundle = IntlTelInputAsset::register($this->getView());
     }
 
     public function registerScript()
@@ -64,9 +60,13 @@ EOD;
         $this->getView()->registerJs($js);
     }
 
-    public function registerAssetBundle()
+    public function run()
     {
-        $this->_assetBundle = IntlTelInputAsset::register($this->getView());
+        if ($this->hasModel()) {
+            return Html::activeTextInput($this->model, $this->attribute, $this->options);
+        } else {
+            return Html::textInput($this->name, $this->value, $this->options);
+        }
     }
 
     public function getAssetBundle()
