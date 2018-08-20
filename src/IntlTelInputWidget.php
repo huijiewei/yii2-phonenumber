@@ -28,7 +28,7 @@ class IntlTelInputWidget extends InputWidget
         parent::init();
 
         $this->options = ArrayHelper::merge([
-            'class' => 'form-control phone-input',
+            'class' => 'form-control',
         ], $this->options);
 
         $this->clientOptions = ArrayHelper::merge([
