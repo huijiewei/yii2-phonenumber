@@ -28,15 +28,14 @@ class IntlTelInputWidget extends InputWidget
         parent::init();
 
         $this->options = ArrayHelper::merge([
-            'class' => 'form-control'
+            'class' => 'form-control phone-input'
         ], $this->options);
 
         $this->clientOptions = ArrayHelper::merge([
             'initialCountry' => 'cn',
             'placeholderNumberType' => 'MOBILE',
             'preferredCountries' => ['us', 'gb', 'cn'],
-            'responsiveDropdown' => true,
-            'nationalMode' => false,
+            'separateDialCode' => true,
         ], $this->clientOptions);
 
         $this->registerAssetBundle();
