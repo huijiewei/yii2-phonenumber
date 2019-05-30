@@ -21,7 +21,7 @@
     "php": "^7.1.3",
     "yiisoft/yii2": "^2.0",
     "giggsey/libphonenumber-for-php": "^8",
-    "npm-asset/intl-tel-input": "^13"
+    "npm-asset/intl-tel-input": "^15"
   },
   "autoload": {
     "psr-4": {
