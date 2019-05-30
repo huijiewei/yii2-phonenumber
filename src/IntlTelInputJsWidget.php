@@ -56,13 +56,13 @@ class IntlTelInputJsWidget extends Widget
 var telInput = document.querySelector('{$this->querySelector}');
 if(telInput) {
     var intlTelInput = window.intlTelInput(telInput, {$clientOptions});
-   
+    
     $(telInput).on("keyup change", resetIntlTelInput);
 
     function resetIntlTelInput() {
       if (typeof intlTelInputUtils !== 'undefined') {
           var currentText = intlTelInput.getNumber(intlTelInputUtils.numberFormat.E164);
-          console.log(currentText);
+          
           if (typeof currentText === 'string') {
               $(this).val(currentText);
           }
@@ -76,7 +76,6 @@ EOD;
         } else {
             $this->getView()->registerJs($js);
         }
-
     }
 
     public function getAssetBundle()
